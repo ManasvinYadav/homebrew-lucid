@@ -2,8 +2,7 @@ cask "lucid" do
   version "0.10"
   sha256 "15a9345d98c8700ac1df92e631018184254592cbbc9d2e94728bcc596ddfb841"
 
-  url "https://github.com/ManasvinYadav/Lucid/releases/download/v#{version}/Lucid-#{version}.dmg",
-      verified: "github.com/ManasvinYadav/Lucid/"
+  url "https://github.com/ManasvinYadav/Lucid/releases/download/v#{version}/Lucid-#{version}.dmg"
   name "Lucid"
   desc "Keeps the Mac awake with the lid shut while an AI coding agent is working"
   homepage "https://github.com/ManasvinYadav/Lucid"
