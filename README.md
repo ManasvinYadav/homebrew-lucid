@@ -3,8 +3,10 @@
 Homebrew tap for [Lucid](https://github.com/ManasvinYadav/Lucid) — looks asleep, isn't.
 
 ```bash
-brew install --cask --no-quarantine manasvinyadav/lucid/lucid
+brew install --cask manasvinyadav/lucid/lucid
+xattr -dr com.apple.quarantine /Applications/Lucid.app
 ```
 
-`--no-quarantine` is needed until Lucid is notarised. See the
-[sponsor goal](https://github.com/sponsors/ManasvinYadav).
+The second line is needed until Lucid is notarised. Homebrew removed its
+`--no-quarantine` flag in version 6, so clearing the attribute is now the only route.
+Notarisation is the whole of the [sponsor goal](https://github.com/sponsors/ManasvinYadav).

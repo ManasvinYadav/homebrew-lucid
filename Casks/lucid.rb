@@ -23,11 +23,7 @@ cask "lucid" do
 
   caveats <<~EOS
     Lucid is ad-hoc signed and not yet notarised, so Gatekeeper will refuse to open
-    it unless the quarantine flag is cleared. Either install with:
-
-      brew install --cask --no-quarantine manasvinyadav/lucid/lucid
-
-    or clear it afterwards:
+    it until the quarantine flag is cleared. Run this once:
 
       xattr -dr com.apple.quarantine "#{appdir}/Lucid.app"
 
