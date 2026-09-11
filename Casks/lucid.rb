@@ -8,7 +8,7 @@ cask "lucid" do
   desc "Keeps the Mac awake with the lid shut while an AI coding agent is working"
   homepage "https://github.com/ManasvinYadav/Lucid"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   depends_on arch:  :arm64
 
   app "Lucid.app"
