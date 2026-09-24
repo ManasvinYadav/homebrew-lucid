@@ -1,19 +1,20 @@
 cask "lucid" do
-  version "0.10"
-  sha256 "15a9345d98c8700ac1df92e631018184254592cbbc9d2e94728bcc596ddfb841"
+  version "0.20"
+  sha256 "66b616a166b86d9fb6c7fad3434736c509d171aa1bf14381523a631a59bff55b"
 
   url "https://github.com/ManasvinYadav/Lucid/releases/download/v#{version}/Lucid-#{version}.dmg"
   name "Lucid"
-  desc "Keeps the Mac awake with the lid shut while an AI coding agent is working"
+  desc "Keeps the computer awake with the lid shut while an AI coding agent works"
   homepage "https://github.com/ManasvinYadav/Lucid"
 
-  depends_on macos: :sonoma
   depends_on arch:  :arm64
+  depends_on macos: :sonoma
 
   app "Lucid.app"
 
-  uninstall quit:      "com.lucid.app",
-            launchctl: "com.lucid.app"
+  # quit only: an uninstall directive for launchctl also deletes the login item's plist,
+  # and brew upgrade runs uninstall, which switched launch at login off on every upgrade.
+  uninstall quit: "com.lucid.app"
 
   zap trash: [
     "~/.lucid",
